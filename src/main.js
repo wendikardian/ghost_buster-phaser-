@@ -1,18 +1,23 @@
 import Phaser from 'phaser'
 
-import HelloWorldScene from './scenes/HelloWorldScene'
+import GhostBusterScene from './scenes/GhostBusterScene'
+import GameOverScene from './scenes/GameOverScene'
 
 const config = {
 	type: Phaser.AUTO,
-	width: 800,
-	height: 600,
+	width: 512,
+	height: 500,
+	scale: {
+		mode : Phaser.Scale.FIT,
+		autoCenter : Phaser.Scale.CENTER_BOTH
+	},
 	physics: {
 		default: 'arcade',
 		arcade: {
 			gravity: { y: 200 }
 		}
 	},
-	scene: [HelloWorldScene]
+	scene: [GhostBusterScene, GameOverScene]
 }
 
 export default new Phaser.Game(config)
